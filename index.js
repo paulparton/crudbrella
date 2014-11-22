@@ -25,8 +25,6 @@ var DryCrud = function(config){
 			//Add the appropriate prototype
 			DryCrud.prototype = _.merge(prototypes.utils, prototypes.mongoose);
 
-			console.log(DryCrud.prototype);
-
 		}
 		
 		//Create the DryCrud object

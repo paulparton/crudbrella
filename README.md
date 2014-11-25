@@ -18,7 +18,10 @@ I will provide a set of examples for each database module. Each set of examples 
 2. Manually pointing express routes to basic CRUDbrella methods
 3. Configuring CRUDbrella methods
 
-###2.1 Mongoose Examples
++   [Go to mongoose examples](#mongooseExamples)
++   [Go to native mongoDB driver examples](#mongodbExamples)
+
+###<a name="mongooseExamples"></a>2.1 Mongoose Examples
 Examples using the mongoose module
 ####2.1.1 Mongoose endpoint generator
     //a mongoose collection
@@ -109,7 +112,7 @@ custom success and error callbacks can be passed into crudbrella methods
 		}
 	});
 
-###2.2 Native mongoDB Examples
+###<a name="mongodbExamples"></a>2.2 Native mongoDB Examples
 Examples using the mongoDB module
 ####2.2.1 Native mongoDB endpoint generator
     //The mongoDB native driver

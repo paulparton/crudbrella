@@ -3,6 +3,7 @@ var _ = require('lodash'),
 	prototypes = {};
 
 prototypes.mongoose = require("./lib/mongoose-prototype");
+prototypes.mongo = require("./lib/mongo-prototype");
 prototypes.utils = require("./lib/utils-prototype");
 
 var DryCrud = function(config){
@@ -25,6 +26,8 @@ var DryCrud = function(config){
 			//Add the appropriate prototype
 			DryCrud.prototype = _.merge(prototypes.utils, prototypes.mongoose);
 
+		}else if(config.type === 'mongo-native' || config.type === 'mongodb'){
+			DryCrud.prototype = _.merge(prototypes.utils, prototypes.mongo);
 		}
 		
 		//Create the DryCrud object

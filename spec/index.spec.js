@@ -21,7 +21,18 @@ describe("the core crudbrella module", function(){
 	});
 
 	it('returns a success callback when a document is deleted', function(){
-		
+
 	});
 
+	describe("the crud route generator - .init()", function(){
+
+		it('generates a set of create, read, update and delete routes', function(){
+
+		});
+
+		it('removes trailing forward slashes from the root prefix', function(){
+
+		});
+
+	});
 });

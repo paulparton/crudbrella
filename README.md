@@ -4,7 +4,7 @@
 CRUDbrella is a nodeJS module for creating DRY Express CRUD apps.
 
 ###How does it do that?
-By generating a set of basic CRUD methods providing and a route generator that adds CRUD enpoints in a single line of code.
+By providing a set of basic CRUD methods and a route generator that adds CRUD enpoints in a single line of code.
 
 ###What databases are currently supported?
 MongoDB using either Mongoose or the native MongoDB driver.

@@ -1,7 +1,7 @@
 {
   "name": "crudbrella",
-  "version": "0.0.4",
-  "description": "A crud generator and utility belt for express with support for multiple databases",
+  "version": "0.0.5",
+  "description": "Keep your CRUD DRY",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,6 @@
 var _ = require('lodash'),
+	utils = require("./lib/utils-prototype"),
 	DryCrud;
-
-prototypes.utils = require("./lib/utils-prototype");
 
 DryCrud = function(config){
 	
@@ -22,7 +21,7 @@ DryCrud = function(config){
 	};
 
 	//Include core functionality and universal utility methods
-	_.extend(newCrud.prototype, prototypes.utils);
+	_.extend(newCrud.prototype, utils);
 
 	//If the type provided is a string
 	if (typeof config.type == 'string' || config.type instanceof String){

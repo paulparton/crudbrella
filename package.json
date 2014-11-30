@@ -1,6 +1,6 @@
 {
   "name": "crudbrella",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A crud generator and utility belt for express with support for multiple databases",
   "main": "index.js",
   "scripts": {

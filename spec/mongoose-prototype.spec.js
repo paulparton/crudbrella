@@ -33,7 +33,9 @@ describe("the mongoose crudbrella module", function(){
 	});
 
 	describe("Delete functionality", function(){
-
+		it('returns a success callback when a document is deleted', function(){
+			
+		});
 	});	
 
 

@@ -1,45 +1,56 @@
 var _ = require('lodash'),
-	DryCrud,
-	prototypes = {};
+	DryCrud;
 
-prototypes.mongoose = require("./lib/mongoose-prototype");
-prototypes.mongo = require("./lib/mongo-prototype");
 prototypes.utils = require("./lib/utils-prototype");
 
-var DryCrud = function(config){
+DryCrud = function(config){
 	
 	//Check for required config
 	if(!config.collection || !config.type){
 
+		//Raise an error here...
 		console.log("dryCrud error: you must provide a database object and type");
 
 		return false;
 
 	}
 
-	//If the DryCrud object has not yet been instanciated
-	if (!(this instanceof DryCrud)) {
+	//Constructor of crudbrella object being returned to the user
+	var newCrud = function(){
+		this.collection = config.collection;
+		this.type = config.type;
+	};
 
-		//Check the type provided
-		if(config.type === 'mongoose'){
-			
-			//Add the appropriate prototype
-			DryCrud.prototype = _.merge(prototypes.utils, prototypes.mongoose);
+	//Include core functionality and universal utility methods
+	_.extend(newCrud.prototype, prototypes.utils);
 
-		}else if(config.type === 'mongo-native' || config.type === 'mongodb'){
-			DryCrud.prototype = _.merge(prototypes.utils, prototypes.mongo);
+	//If the type provided is a string
+	if (typeof config.type == 'string' || config.type instanceof String){
+
+		//attempt to load and use the module
+		try {
+  	 		
+  	 		var adaptorModule = require(config.type);
+
+		} catch(e) {
+    		
+    		console.error("Adaptor " + config.typre + " is not found");
+    		process.exit(e.code);
+	
 		}
+
+	//If the type provided is a module
+	}else{
 		
-		//Create the DryCrud object
-		return new DryCrud(config);
+		adaptorModule = config.type;
 
 	}
 
-	//Consume any configuration
-	this.collection = config.collection;
+	//use the module
+	_.extend(newCrud.prototype, adaptorModule);
+
+	return new newCrud();
 
 };
-
-
 
 module.exports = DryCrud;

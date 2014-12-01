@@ -7,12 +7,12 @@ exports.mockCollection = {
 	mockQuery: function(request, callback){
 
 		//return success or fail based on input
-		return callback(request.body, request.error);
+		return callback(request.body || "", request.error || "");
 
 	}
 },
 
-exports.mockConnector =  {
+exports.mockAdaptor =  {
 
 	//Create a new record
 	create: function (options){
@@ -53,9 +53,9 @@ exports.mockConnector =  {
 			//this.utils.parseQuery;
 
 			//Find using optional query or find all
-			this.collection.mockQuery(query || {}, function(err, items){
+			this.collection.mockQuery(options.query, function(err, items){
 
-					if(items.length === 1){
+					if(items.length && items.length === 1){
 						items = items[0];
 					}
 

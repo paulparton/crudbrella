@@ -1,14 +1,15 @@
 var _ = require('lodash'),
 	utils = require("./lib/utils-prototype"),
-	DryCrud;
+	Crudbrella;
 
-DryCrud = function(config){
+Crudbrella = function(config){
 	
 	//Check for required config
 	if(!config.collection || !config.type){
 
 		//Raise an error here...
-		console.log("dryCrud error: you must provide a database object and type");
+    	console.error("dryCrud error: you must provide a database object and type");
+    	process.exit(e.code);
 
 		return false;
 
@@ -20,7 +21,7 @@ DryCrud = function(config){
 		this.type = config.type;
 	};
 
-	//Include core functionality and universal utility methods
+	//Include core functionality and utility methods
 	_.extend(newCrud.prototype, utils);
 
 	//If the type provided is a string

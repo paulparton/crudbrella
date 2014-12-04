@@ -20,38 +20,88 @@
 8 verbose parsed url   href: '.' }
 9 silly lockFile 3a52ce78- .
 10 verbose lock . /home/vagrant/.npm/3a52ce78-.lock
-11 verbose tar pack [ '/home/vagrant/.npm/crudbrella/0.0.1/package.tgz', '.' ]
-12 verbose tarball /home/vagrant/.npm/crudbrella/0.0.1/package.tgz
+11 verbose tar pack [ '/home/vagrant/.npm/crudbrella/0.0.5/package.tgz', '.' ]
+12 verbose tarball /home/vagrant/.npm/crudbrella/0.0.5/package.tgz
 13 verbose folder .
-14 info prepublish crudbrella@0.0.1
+14 info prepublish crudbrella@0.0.5
 15 silly lockFile 1f1177db-tar tar://.
 16 verbose lock tar://. /home/vagrant/.npm/1f1177db-tar.lock
-17 silly lockFile 1469c05e-npm-crudbrella-0-0-1-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.1/package.tgz
-18 verbose lock tar:///home/vagrant/.npm/crudbrella/0.0.1/package.tgz /home/vagrant/.npm/1469c05e-npm-crudbrella-0-0-1-package-tgz.lock
+17 silly lockFile 5b234237-npm-crudbrella-0-0-5-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.5/package.tgz
+18 verbose lock tar:///home/vagrant/.npm/crudbrella/0.0.5/package.tgz /home/vagrant/.npm/5b234237-npm-crudbrella-0-0-5-package-tgz.lock
 19 silly lockFile 1f1177db-tar tar://.
 20 silly lockFile 1f1177db-tar tar://.
-21 silly lockFile 1469c05e-npm-crudbrella-0-0-1-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.1/package.tgz
-22 silly lockFile 1469c05e-npm-crudbrella-0-0-1-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.1/package.tgz
-23 silly lockFile 968e08a5-ant-npm-crudbrella-0-0-1-package /home/vagrant/.npm/crudbrella/0.0.1/package
-24 verbose lock /home/vagrant/.npm/crudbrella/0.0.1/package /home/vagrant/.npm/968e08a5-ant-npm-crudbrella-0-0-1-package.lock
-25 silly lockFile 968e08a5-ant-npm-crudbrella-0-0-1-package /home/vagrant/.npm/crudbrella/0.0.1/package
-26 silly lockFile 968e08a5-ant-npm-crudbrella-0-0-1-package /home/vagrant/.npm/crudbrella/0.0.1/package
+21 silly lockFile 5b234237-npm-crudbrella-0-0-5-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.5/package.tgz
+22 silly lockFile 5b234237-npm-crudbrella-0-0-5-package-tgz tar:///home/vagrant/.npm/crudbrella/0.0.5/package.tgz
+23 silly lockFile 5dcff25d-ant-npm-crudbrella-0-0-5-package /home/vagrant/.npm/crudbrella/0.0.5/package
+24 verbose lock /home/vagrant/.npm/crudbrella/0.0.5/package /home/vagrant/.npm/5dcff25d-ant-npm-crudbrella-0-0-5-package.lock
+25 silly lockFile 5dcff25d-ant-npm-crudbrella-0-0-5-package /home/vagrant/.npm/crudbrella/0.0.5/package
+26 silly lockFile 5dcff25d-ant-npm-crudbrella-0-0-5-package /home/vagrant/.npm/crudbrella/0.0.5/package
 27 silly lockFile 3a52ce78- .
 28 silly lockFile 3a52ce78- .
-29 error addLocal Could not install .
-30 error Error: EACCES, open '/home/vagrant/.npm/crudbrella/0.0.1/package/package.json'
-30 error  { [Error: EACCES, open '/home/vagrant/.npm/crudbrella/0.0.1/package/package.json']
-30 error   errno: 3,
-30 error   code: 'EACCES',
-30 error   path: '/home/vagrant/.npm/crudbrella/0.0.1/package/package.json' }
-31 error Please try running this command again as root/Administrator.
-32 error System Linux 3.2.0-23-generic
-33 error command "/usr/bin/node" "/usr/bin/npm" "publish"
-34 error cwd /home/vagrant/projects/crudbrella
-35 error node -v v0.10.32
-36 error npm -v 1.4.28
-37 error path /home/vagrant/.npm/crudbrella/0.0.1/package/package.json
-38 error code EACCES
-39 error errno 3
-40 error stack Error: EACCES, open '/home/vagrant/.npm/crudbrella/0.0.1/package/package.json'
-41 verbose exit [ 3, true ]
+29 silly publish { name: 'crudbrella',
+29 silly publish   version: '0.0.5',
+29 silly publish   description: 'Keep your CRUD DRY',
+29 silly publish   main: 'index.js',
+29 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+29 silly publish   keywords: [ 'node', 'express', 'crud' ],
+29 silly publish   author: { name: 'Paul Parton' },
+29 silly publish   license: 'ISC',
+29 silly publish   dependencies: { lodash: '^2.4.1' },
+29 silly publish   devDependencies: {},
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/paulparton/crudbrella.git' },
+29 silly publish   bugs: { url: 'https://github.com/paulparton/crudbrella/issues' },
+29 silly publish   homepage: 'https://github.com/paulparton/crudbrella',
+29 silly publish   readme: '#CRUDbrella\nCRUDbrella is a nodeJS module for creating DRY Express CRUD apps.\n###What exactly does it do?\nCrudbrella provides a set of basic CRUD methods and a route generator that adds CRUD enpoints in a single line of code.\n\n##Installation\nAfter installing nodeJS and your database of choice install crudbrella via npm\n\n    npm install crudbrella\n\nThen install the crudbrella adaptor for your database\n\n    npm install adaptor-crudbrealla-[adaptor type]\n\n###What databases are currently supported?\nMongoDB using either Mongoose or the native MongoDB driver.\n\n    //Install the mongoose adaptor\n    npm install adaptor-crudbrella-mongoose\n    \n    //Install the native mongo adaptor\n    npm install adaptor-crudbrella-mongo\n\n###What other databases will be supported?\nI am currently working on support for PostgreSQL and MYSQL. I will continue to add more databases and will happily take requests.\n\n##Overview and examples\nThe following are general examples of crudbrella useage, for usage details about a specific adaptor read that adaptors readme.\n\n###Adaptors\n\n*   <a href="https://github.com/paulparton/adaptor-crudbrella-mongo" target="_blank">native mongodb adaptor</a>\n*   <a href="https://github.com/paulparton/adaptor-crudbrella-mongoose" target="_blank">mongoose adaptor</a>\n\n\n###Get started\nCreate a new crudbrella instance by passing the adaptor and a database connection to the crudbrella module\n\n    //crudbrella\n    var crudbrella = require(\'crudbrella\');\n        //A database connection\n        mongooseCollection = ...,\n        //A crudbrella adaptor\n        crudbrellaAdaptor = require("adaptor-crudbrella-mongoose"),\n        //express app or router\n\t    app;\n\t    \n        //open a crudbrella!\n\t    myCrud = crudbrella({\n\t\t    type: crudbrellaAdaptor,\n\t\t    collection: mongooseCollection\n\t    });\n####Generate a set of standard endpoints (create, read, read/:id, update/:id, delete)\n\n        //generate crud endpoints, this will create the same set of methods created manually in the next examples\n\t    crudbrella.init(\'routePrefix\', app);\n\n####Manually create crudbrella routes\n        //Create\n        app.post(\'/\', myCrud.create());\n        //Read all\n\t    app.get(\'/\', myCrud.read());\n\t    //Read one by id\n\t    app.get(\'/:id\', myCrud.read({query:{_id:\'^id\'}}));\n\t    //Update\n\t    app.put(\'/\', myCrud.update());\n\t    //Delete\n\t    app.delete(\'/:id\', myCrud.delete());\n\n\t    //query:{_id:\'^id\'}} is explained in the next example\n\n####Configuring CRUDbrella methods\nConfiguraiton of methods is currently limited, future configuration options are actively being investigated. As with all aspects of crudbrella, requests are welcome.\n\nAll methods accept a single object with named parameters.\n\n##### query\nCalling .read() with no query will get all records, a query can be passed as JSON. To use a url parameter in a query pass the parameter name as a string, prefexed by ^\n    \n    //pass a {id: app.params.id} query\n\tmyCrud.read({\n\t\tquery: {_id:\'^id\'}\n\t});\n\n#####callbacks\ncustom success and error callbacks can be passed into crudbrella methods. \n\n\tmyCrud.read({\n\t\tonSuccess: function(expressResponse, queryResult){\n\n\t\t\tres.json(200, queryResult);\n\n\t\t},\n\t\tonError: function(expressResponse, queryResult){\n\t\t\t...\n\t\t}\n\t});\n\n\n\n\n\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '1dc61ad7e1a2c74a3f9f0eaf25d1ddb632a328ee',
+29 silly publish   _id: 'crudbrella@0.0.5',
+29 silly publish   _shasum: '1dffa7233561c7ae7edadbe5391fe9e8f8513b99',
+29 silly publish   _from: '.' }
+30 verbose request where is /crudbrella
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id f2b7ae7734b6589e
+33 verbose url raw /crudbrella
+34 verbose url resolving [ 'https://registry.npmjs.org/', './crudbrella' ]
+35 verbose url resolved https://registry.npmjs.org/crudbrella
+36 verbose request where is https://registry.npmjs.org/crudbrella
+37 info trying registry request attempt 1 at 11:17:41
+38 http PUT https://registry.npmjs.org/crudbrella
+39 http 403 https://registry.npmjs.org/crudbrella
+40 verbose headers { date: 'Mon, 01 Dec 2014 11:17:42 GMT',
+40 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=60',
+40 verbose headers   'content-length': '6335',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'x-served-by': 'cache-syd1622-SYD',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1417432661.898463,VS0,VE903',
+40 verbose headers   'keep-alive': 'timeout=10, max=50',
+40 verbose headers   connection: 'Keep-Alive' }
+41 error publish Failed PUT 403
+42 error Error: forbidden cannot modify pre-existing version: 0.0.5
+42 error old={"name":"crudbrella","version":"0.0.5","description":"Keep your CRUD DRY","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":["node","express","crud"],"author":{"name":"Paul Parton"},"license":"ISC","dependencies":{"lodash":"^2.4.1"},"devDependencies":{},"repository":{"type":"git","url":"https://github.com/paulparton/crudbrella.git"},"bugs":{"url":"https://github.com/paulparton/crudbrella/issues"},"homepage":"https://github.com/paulparton/crudbrella","gitHead":"49bd0c187edeb0e21a02e06379265e35ba05398e","_id":"crudbrella@0.0.5","_shasum":"bedb72653d3988c9b5ea42d2940547f2ee972fbe","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"paupl","email":"paulparton@gmail.com"},"maintainers":[{"name":"paupl","email":"paulparton@gmail.com"}],"dist":{"shasum":"bedb72653d3988c9b5ea42d2940547f2ee972fbe","tarball":"http://registry.npmjs.org/crudbrella/-/crudbrella-0.0.5.tgz"}}
+42 error new={"name":"crudbrella","version":"0.0.5","description":"Keep your CRUD DRY","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":["node","express","crud"],"author":{"name":"Paul Parton"},"license":"ISC","dependencies":{"lodash":"^2.4.1"},"devDependencies":{},"repository":{"type":"git","url":"https://github.com/paulparton/crudbrella.git"},"bugs":{"url":"https://github.com/paulparton/crudbrella/issues"},"homepage":"https://github.com/paulparton/crudbrella","readme":"#CRUDbrella\u000aCRUDbrella is a nodeJS module for creating DRY Express CRUD apps.\u000a###What exactly does it do?\u000aCrudbrella provides a set of basic CRUD methods and a route generator that adds CRUD enpoints in a single line of code.\u000a\u000a##Installation\u000aAfter installing nodeJS and your database of choice install crudbrella via npm\u000a\u000a    npm install crudbrella\u000a\u000aThen install the crudbrella adaptor for your database\u000a\u000a    npm install adaptor-crudbrealla-[adaptor type]\u000a\u000a###What databases are currently supported?\u000aMongoDB using either Mongoose or the native MongoDB driver.\u000a\u000a    //Install the mongoose adaptor\u000a    npm install adaptor-crudbrella-mongoose\u000a    \u000a    //Install the native mongo adaptor\u000a    npm install adaptor-crudbrella-mongo\u000a\u000a###What other databases will be supported?\u000aI am currently working on support for PostgreSQL and MYSQL. I will continue to add more databases and will happily take requests.\u000a\u000a##Overview and examples\u000aThe following are general examples of crudbrella useage, for usage details about a specific adaptor read that adaptors readme.\u000a\u000a###Adaptors\u000a\u000a*   <a href=\"https://github.com/paulparton/adaptor-crudbrella-mongo\" target=\"_blank\">native mongodb adaptor</a>\u000a*   <a href=\"https://github.com/paulparton/adaptor-crudbrella-mongoose\" target=\"_blank\">mongoose adaptor</a>\u000a\u000a\u000a###Get started\u000aCreate a new crudbrella instance by passing the adaptor and a database connection to the crudbrella module\u000a\u000a    //crudbrella\u000a    var crudbrella = require('crudbrella');\u000a        //A database connection\u000a        mongooseCollection = ...,\u000a        //A crudbrella adaptor\u000a        crudbrellaAdaptor = require(\"adaptor-crudbrella-mongoose\"),\u000a        //express app or router\u000a\u0009    app;\u000a\u0009    \u000a        //open a crudbrella!\u000a\u0009    myCrud = crudbrella({\u000a\u0009\u0009    type: crudbrellaAdaptor,\u000a\u0009\u0009    collection: mongooseCollection\u000a\u0009    });\u000a####Generate a set of standard endpoints (create, read, read/:id, update/:id, delete)\u000a\u000a        //generate crud endpoints, this will create the same set of methods created manually in the next examples\u000a\u0009    crudbrella.init('routePrefix', app);\u000a\u000a####Manually create crudbrella routes\u000a        //Create\u000a        app.post('/', myCrud.create());\u000a        //Read all\u000a\u0009    app.get('/', myCrud.read());\u000a\u0009    //Read one by id\u000a\u0009    app.get('/:id', myCrud.read({query:{_id:'^id'}}));\u000a\u0009    //Update\u000a\u0009    app.put('/', myCrud.update());\u000a\u0009    //Delete\u000a\u0009    app.delete('/:id', myCrud.delete());\u000a\u000a\u0009    //query:{_id:'^id'}} is explained in the next example\u000a\u000a####Configuring CRUDbrella methods\u000aConfiguraiton of methods is currently limited, future configuration options are actively being investigated. As with all aspects of crudbrella, requests are welcome.\u000a\u000aAll methods accept a single object with named parameters.\u000a\u000a##### query\u000aCalling .read() with no query will get all records, a query can be passed as JSON. To use a url parameter in a query pass the parameter name as a string, prefexed by ^\u000a    \u000a    //pass a {id: app.params.id} query\u000a\u0009myCrud.read({\u000a\u0009\u0009query: {_id:'^id'}\u000a\u0009});\u000a\u000a#####callbacks\u000acustom success and error callbacks can be passed into crudbrella methods. \u000a\u000a\u0009myCrud.read({\u000a\u0009\u0009onSuccess: function(expressResponse, queryResult){\u000a\u000a\u0009\u0009\u0009res.json(200, queryResult);\u000a\u000a\u0009\u0009},\u000a\u0009\u0009onError: function(expressResponse, queryResult){\u000a\u0009\u0009\u0009...\u000a\u0009\u0009}\u000a\u0009});\u000a\u000a\u000a\u000a\u000a\u000a","readmeFilename":"README.md","gitHead":"1dc61ad7e1a2c74a3f9f0eaf25d1ddb632a328ee","_id":"crudbrella@0.0.5","_shasum":"1dffa7233561c7ae7edadbe5391fe9e8f8513b99","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"paupl","email":"paulparton@gmail.com"},"maintainers":[{"name":"paupl","email":"paulparton@gmail.com"}],"dist":{"shasum":"1dffa7233561c7ae7edadbe5391fe9e8f8513b99","tarball":"http://registry.npmjs.org/crudbrella/-/crudbrella-0.0.5.tgz"}}: crudbrella
+42 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+42 error     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+42 error     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:236:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Linux 3.2.0-23-generic
+45 error command "/usr/bin/node" "/usr/bin/npm" "publish"
+46 error cwd /home/vagrant/projects/crudbrella
+47 error node -v v0.10.32
+48 error npm -v 1.4.28
+49 verbose exit [ 1, true ]

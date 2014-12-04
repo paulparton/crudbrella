@@ -1,8 +1,8 @@
 var _ = require('lodash'),
 	utils = require("./lib/utils-prototype"),
-	DryCrud;
+	crudbrella;
 
-DryCrud = function(config){
+crudbrella = function(config){
 	
 	//Check for required config
 	if(!config.collection || !config.type){
@@ -52,4 +52,4 @@ DryCrud = function(config){
 
 };
 
-module.exports = DryCrud;
+module.exports = crudbrella;

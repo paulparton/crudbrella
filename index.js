@@ -1,5 +1,6 @@
 var _ = require('lodash'),
 	utils = require("./lib/utils-prototype"),
+	cbCore = require("./lib/crudbrella-prototype"),
 	crudbrella;
 
 crudbrella = function(config){
@@ -16,10 +17,23 @@ crudbrella = function(config){
 
 	//Constructor of crudbrella object being returned to the user
 	var newCrud = function(){
+
+		//Perhaps I should target this at only the this.db functions.
+		for (sub in this) {
+        	for (key in this[sub]) {
+            	if (typeof this[sub][key] == 'function') {
+                	this[sub][key] = this[sub][key].bind(this);
+            	}
+        	}
+    	}
+
 		this.collection = config.collection;
 		this.type = config.type;
+
 	};
 
+	//newCrud.prototype = cbCore;
+		
 	//Include core functionality and universal utility methods
 	_.extend(newCrud.prototype, utils);
 
@@ -46,7 +60,10 @@ crudbrella = function(config){
 	}
 
 	//use the module
-	_.extend(newCrud.prototype, adaptorModule);
+	
+	
+	newCrud.prototype.db = adaptorModule
+	_.extend(newCrud.prototype, cbCore);
 
 	return new newCrud();
 

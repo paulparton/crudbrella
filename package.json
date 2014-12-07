@@ -1,6 +1,6 @@
 {
   "name": "crudbrella",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Keep your CRUD DRY",
   "main": "index.js",
   "scripts": {
